@@ -1,0 +1,121 @@
+//colors
+$color-navy:rgb(0, 25, 53);
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    background-color: $color-navy;
+}
+
+nav{
+    display: block;
+    height: 55px;
+    position: sticky;
+    .nav-container{
+        display: flex;
+        max-width: 1720px;
+        padding: 0 20px;
+        margin: 0 auto;
+        height: 100%;
+        justify-content: space-between;
+        .nav-left-side{
+            display: flex;
+            height: 100%;
+            align-items: center;
+            .logo-nav{
+                height: 100%;
+                width: 45px;
+                display: inline-block;
+                background-color: lightcoral;
+            }
+            input{
+                height: 34px; 
+                width: 448px;
+            }
+        }
+        .nav-buttons{
+            display: flex;
+            align-items: center;
+            margin: auto 0;
+            height: 45px;
+            width: 400px;
+            justify-content: space-between;
+            button{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+    }
+}
+
+.home-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    max-width: 975px;
+    margin: 0 auto;
+    color: #fff;
+    height: auto;
+    .left-column{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(135, 134, 134);
+        .post-selection-section{
+            background-color: palevioletred;
+            width: 100%;
+            display: flex;
+            .profile-img{
+                width: 64px;
+                height: 64px;
+                background-color: olive;
+            }
+            .post-type-icons{
+                display: grid;
+                width: 80%;
+                margin-left: auto;
+                height: 100px;
+                grid-template-columns:repeat(7, 1fr);
+                background-color: pink;
+                .single-post-type-icon{
+                    text-align: center;
+                    button{
+                        width: 100%;
+                        height: 70%;
+                    }
+                }
+            }
+        }
+        .content-selection{
+            display: flex;
+            width: 80%;
+            float: right;
+            margin-left: auto;
+            background-color: green;
+            justify-content: space-evenly;
+            div{
+                font-size: 1.3em;
+                display: flex;
+                align-items: center;
+                img{
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 10px;
+                    background-color: aqua;
+                }
+            }
+            
+        }
+    }
+    .right-column{
+        background-color: burlywood;
+    }
+}
+
+
+
+
+
