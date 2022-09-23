@@ -106,6 +106,29 @@ nav .nav-container .nav-buttons button {
   margin-left: 10px;
   background-color: aqua;
 }
+.home-container .left-column article {
+  background-color: rgb(84, 46, 46);
+  height: auto;
+  width: 80%;
+  align-self: flex-end;
+  display: grid;
+}
+.home-container .left-column article .sticky-avatar-container {
+  background-color: antiquewhite;
+  height: 100%;
+  width: 65px;
+  margin-left: -125px;
+  grid-rows: 1;
+}
+.home-container .left-column article .sticky-avatar-container img {
+  width: 100%;
+  height: auto;
+  position: sticky;
+}
+.home-container .left-column article .article-header {
+  background-color: aquamarine;
+  width: 100%;
+}
 .home-container .right-column {
   background-color: burlywood;
 }

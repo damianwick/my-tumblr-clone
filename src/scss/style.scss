@@ -109,6 +109,30 @@ nav{
             }
             
         }
+        article{
+            background-color: rgb(84, 46, 46);
+            height: auto;
+            width: 80%;
+            align-self: flex-end;
+            display: grid;
+            .sticky-avatar-container{
+                background-color: antiquewhite;
+                height: 100%;
+                width: 65px;
+                margin-left: -125px;
+                grid-rows: 1;
+                img{
+                    width: 100%;
+                    height: auto;
+                    position: sticky;
+                }
+            }
+            .article-header{
+                background-color: aquamarine;
+                width: 100%;
+            }
+        }
+        
     }
     .right-column{
         background-color: burlywood;
