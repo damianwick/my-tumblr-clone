@@ -5,6 +5,8 @@
 
 html, body {
   background-color: rgb(0, 25, 53);
+  color: #fff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica";
 }
 
 nav {
@@ -27,9 +29,14 @@ nav .nav-container .nav-left-side {
 }
 nav .nav-container .nav-left-side .logo-nav {
   height: 100%;
-  width: 45px;
-  display: inline-block;
-  background-color: lightcoral;
+  width: 22px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+}
+nav .nav-container .nav-left-side .logo-nav svg {
+  width: 21.5px;
+  height: 37px;
 }
 nav .nav-container .nav-left-side input {
   height: 34px;
@@ -39,13 +46,16 @@ nav .nav-container .nav-buttons {
   display: flex;
   align-items: center;
   margin: auto 0;
-  height: 45px;
-  width: 400px;
+  height: 32px;
+  width: 373px;
   justify-content: space-between;
 }
 nav .nav-container .nav-buttons button {
-  width: 35px;
-  height: 35px;
+  background-color: transparent;
+  border: none;
+}
+nav .nav-container .nav-buttons .compose-btn {
+  background-color: rgb(0, 184, 255);
 }
 
 .home-container {
@@ -54,23 +64,22 @@ nav .nav-container .nav-buttons button {
   grid-gap: 30px;
   max-width: 975px;
   margin: 0 auto;
-  color: #fff;
   height: auto;
 }
 .home-container .left-column {
   display: flex;
   flex-direction: column;
-  background-color: rgb(135, 134, 134);
 }
 .home-container .left-column .post-selection-section {
-  background-color: palevioletred;
   width: 100%;
   display: flex;
 }
 .home-container .left-column .post-selection-section .profile-img {
   width: 64px;
   height: 64px;
-  background-color: olive;
+}
+.home-container .left-column .post-selection-section .profile-img img {
+  width: 100%;
 }
 .home-container .left-column .post-selection-section .post-type-icons {
   display: grid;
@@ -78,7 +87,6 @@ nav .nav-container .nav-buttons button {
   margin-left: auto;
   height: 100px;
   grid-template-columns: repeat(7, 1fr);
-  background-color: pink;
 }
 .home-container .left-column .post-selection-section .post-type-icons .single-post-type-icon {
   text-align: center;
@@ -92,7 +100,6 @@ nav .nav-container .nav-buttons button {
   width: 80%;
   float: right;
   margin-left: auto;
-  background-color: green;
   justify-content: space-evenly;
 }
 .home-container .left-column .content-selection div {
@@ -107,27 +114,107 @@ nav .nav-container .nav-buttons button {
   background-color: aqua;
 }
 .home-container .left-column article {
-  background-color: rgb(84, 46, 46);
+  margin: 10px auto;
   height: auto;
-  width: 80%;
+  width: 100%;
   align-self: flex-end;
   display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 .home-container .left-column article .sticky-avatar-container {
-  background-color: antiquewhite;
   height: 100%;
   width: 65px;
-  margin-left: -125px;
-  grid-rows: 1;
 }
 .home-container .left-column article .sticky-avatar-container img {
   width: 100%;
   height: auto;
   position: sticky;
 }
-.home-container .left-column article .article-header {
-  background-color: aquamarine;
+.home-container .left-column article .article-container {
   width: 100%;
+}
+.home-container .left-column article .article-container .article-header {
+  width: 100%;
+  height: 51px;
+  padding: 15px 20px auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-container .left-column article .article-container .article-header .inner-left-article-header {
+  display: flex;
+  margin-left: 20px;
+}
+.home-container .left-column article .article-container .article-header .inner-right-article-header {
+  margin-right: 20px;
+}
+.home-container .left-column article .article-container .post-header-container {
+  margin-top: 15px;
+}
+.home-container .left-column article .article-container .post-header-container .post-header {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.home-container .left-column article .article-container .post-header-container .post-header .post-header-image {
+  width: 25px;
+  height: 25px;
+  background-color: orange;
+}
+.home-container .left-column article .article-container .post-header-container .post-header .post-header-image img {
+  width: 100%;
+}
+.home-container .left-column article .article-container .post-header-container .post-paragraph-container {
+  padding: 10px;
+}
+.home-container .left-column article .article-container .post-header-container .post-picture-container {
+  width: 100%;
+  margin-bottom: 35px;
+}
+.home-container .left-column article .article-container .post-header-container .post-picture-container img {
+  width: 100%;
+}
+.home-container .left-column article .article-container .post-footer-container {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-left-text span {
+  color: rgba(255, 255, 255, 0.6509803922);
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons {
+  display: flex;
+  align-items: center;
+  width: 149px;
+  height: 26.4px;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons .icon {
+  margin-left: 20px;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons .share-icon {
+  width: 21px;
+  height: 21px;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons .comment-icon {
+  width: 21px;
+  height: 21px;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons .reblog-icon {
+  height: 21px;
+}
+.home-container .left-column article .article-container .post-footer-container .post-footer .footer-right-icons .like-icon {
+  height: 21px;
 }
 .home-container .right-column {
   background-color: burlywood;

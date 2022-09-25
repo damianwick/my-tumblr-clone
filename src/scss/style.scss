@@ -8,7 +8,18 @@ $color-navy:rgb(0, 25, 53);
 
 html, body{
     background-color: $color-navy;
+    color: #fff;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica";
+
+    
 }
+
+//colors
+$accent: rgb(0, 184, 255);
+$default-text:  #ffffffa6;
+
+//measures
+$post-padding: 10px;
 
 nav{
     display: block;
@@ -27,9 +38,14 @@ nav{
             align-items: center;
             .logo-nav{
                 height: 100%;
-                width: 45px;
-                display: inline-block;
-                background-color: lightcoral;
+                width: 22px;
+                padding-right: 15px;
+                display: flex;
+                align-items: center;
+                svg{
+                    width: 21.5px;
+                    height: 37px;
+                }
             }
             input{
                 height: 34px; 
@@ -40,12 +56,15 @@ nav{
             display: flex;
             align-items: center;
             margin: auto 0;
-            height: 45px;
-            width: 400px;
+            height: 32px;
+            width: 373px;
             justify-content: space-between;
             button{
-                width: 35px;
-                height: 35px;
+             background-color: transparent;
+             border: none;   
+            }
+            .compose-btn{
+                background-color: $accent;
             }
         }
         
@@ -58,20 +77,19 @@ nav{
     grid-gap: 30px;
     max-width: 975px;
     margin: 0 auto;
-    color: #fff;
     height: auto;
     .left-column{
         display: flex;
         flex-direction: column;
-        background-color: rgb(135, 134, 134);
         .post-selection-section{
-            background-color: palevioletred;
             width: 100%;
             display: flex;
             .profile-img{
                 width: 64px;
                 height: 64px;
-                background-color: olive;
+                img{
+                    width: 100%;
+                }
             }
             .post-type-icons{
                 display: grid;
@@ -79,7 +97,6 @@ nav{
                 margin-left: auto;
                 height: 100px;
                 grid-template-columns:repeat(7, 1fr);
-                background-color: pink;
                 .single-post-type-icon{
                     text-align: center;
                     button{
@@ -94,7 +111,6 @@ nav{
             width: 80%;
             float: right;
             margin-left: auto;
-            background-color: green;
             justify-content: space-evenly;
             div{
                 font-size: 1.3em;
@@ -110,29 +126,117 @@ nav{
             
         }
         article{
-            background-color: rgb(84, 46, 46);
+            margin: 10px auto;
             height: auto;
-            width: 80%;
+            width: 100%;
             align-self: flex-end;
             display: grid;
+            grid-template-columns: 1fr 4fr;
             .sticky-avatar-container{
-                background-color: antiquewhite;
                 height: 100%;
                 width: 65px;
-                margin-left: -125px;
-                grid-rows: 1;
                 img{
                     width: 100%;
                     height: auto;
                     position: sticky;
                 }
             }
-            .article-header{
-                background-color: aquamarine;
+            .article-container{
                 width: 100%;
+                .article-header{
+                    width: 100%;
+                    height: 51px;
+                    padding: 15px 20px auto;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    .inner-left-article-header{
+                        display: flex;
+                        margin-left: 20px;
+                    }   
+                    .inner-right-article-header{
+                        margin-right: 20px;
+                    }
+                }
+                .post-header-container{
+                    margin-top: 15px;
+                    .post-header{
+                        padding-left: $post-padding;
+                        padding-right: $post-padding;
+                        margin-bottom: 15px;
+                        display: flex;
+                        flex-direction: row;
+                        .post-header-image{
+                            width: 25px;
+                            height: 25px;
+                            background-color: orange;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .post-paragraph-container{
+                        padding: $post-padding;
+                    }
+                    .post-picture-container{
+                        width: 100%;
+                        margin-bottom: 35px;
+                        img{
+                            width: 100%
+                        };
+                    }
+                }
+                .post-footer-container{
+                    padding-bottom: $post-padding;
+                    padding-left: $post-padding;
+                    padding-right: $post-padding;
+                    box-sizing: border-box;
+                    width: 100%;
+                    .post-footer{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .footer-left-text{
+                            span{
+                                color: $default-text;
+                            }
+                        }
+                        .footer-right-icons{
+                            display: flex;
+                            align-items: center;
+                            width: 149px;
+                            height: 26.4px;
+                            .icon{
+                                margin-left: 20px;
+                            }
+                            .share-icon{
+                                width: 21px;
+                                height: 21px;
+                                
+                                                               
+                            }
+                            .comment-icon{
+                                width: 21px;
+                                height: 21px;
+                                
+                                
+                            }
+                            .reblog-icon{
+                                height: 21px;
+                                 
+                                                               
+                            }
+                            .like-icon{ 
+                                height: 21px;
+                                 
+                            }
+                        }
+                    }
+                }
             }
         }
-        
     }
     .right-column{
         background-color: burlywood;
