@@ -1,5 +1,18 @@
 //colors
-$color-navy:rgb(0, 25, 53);
+$accent: rgb(0, 184, 255);
+$default-text:  #ffffffa6;
+$navy: rgb(0, 0, 0);
+$navy-accent: rgb(34, 34, 34);
+$red: rgb(255, 73, 48);
+$orange: rgb(255, 138, 0);
+$yellow: rgb(232, 215, 56);
+$green: rgb(0, 207, 53);
+$blue: rgb(0, 184, 255);
+$purple: rgb(124, 92, 255);
+$pink: rgb(255, 98, 206);
+
+//measures
+$post-padding: 10px;
 
 *{
     padding: 0;
@@ -7,19 +20,14 @@ $color-navy:rgb(0, 25, 53);
 }
 
 html, body{
-    background-color: $color-navy;
+    background-color: $navy;
     color: #fff;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica";
 
     
 }
 
-//colors
-$accent: rgb(0, 184, 255);
-$default-text:  #ffffffa6;
 
-//measures
-$post-padding: 10px;
 
 nav{
     display: block;
@@ -110,55 +118,77 @@ nav{
 
 .home-container{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 624px 320px;
     grid-gap: 30px;
-    max-width: 975px;
-    margin: 0 auto;
+    max-width: 990px;
+    margin: 40px auto;
     height: auto;
     .left-column{
         display: flex;
         flex-direction: column;
         .post-selection-section{
+            justify-content: space-between;
             width: 100%;
             display: flex;
             .profile-img{
                 width: 64px;
                 height: 64px;
                 img{
+                    border-radius: 3px;
                     width: 100%;
                 }
             }
             .post-type-icons{
-                display: grid;
-                width: 80%;
-                margin-left: auto;
-                height: 100px;
-                grid-template-columns:repeat(7, 1fr);
-                .single-post-type-icon{
+                background-color: $navy-accent;
+                display: flex;
+                justify-content: center;
+                margin: 0 0 20px;
+                padding: 15px 5px;
+                width: 100%;
+                max-width: 540px;
+                height: 104px;
+                box-sizing: border-box;
+                border-radius: 3px;               
+                button{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 75.71px;
+                    height: 74px;
+                    padding: 5px 0;
+                    color: #fff;
+                    background-color: transparent;
+                    border: none;
                     text-align: center;
-                    button{
-                        width: 100%;
-                        height: 70%;
+                    svg{
+                        margin: 0 0 5px;
                     }
                 }
             }
         }
         .content-selection{
             display: flex;
-            width: 80%;
+            max-width: 540px;
+            width: 100%;
             float: right;
             margin-left: auto;
             justify-content: space-evenly;
-            div{
-                font-size: 1.3em;
+            button{
+                border: none;
+                background-color: inherit;
+                color: #fff;
+                font-size: 18px;
+                padding: 14px 16px;
                 display: flex;
                 align-items: center;
-                img{
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 10px;
-                    background-color: aqua;
-                }
+            }
+            button:hover{
+                background-color: $navy-accent;
+            }
+            button:focus{
+                color: $blue;
+                border-bottom: 2px solid $blue;
             }
             
         }
@@ -168,11 +198,12 @@ nav{
             width: 100%;
             align-self: flex-end;
             display: grid;
-            grid-template-columns: 1fr 4fr;
+            grid-template-columns: 1fr 540px;
             .sticky-avatar-container{
                 height: 100%;
                 width: 65px;
                 img{
+                    border-radius: 3px;
                     width: 100%;
                     height: auto;
                     position: sticky;
