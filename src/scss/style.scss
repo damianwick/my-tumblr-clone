@@ -1,4 +1,4 @@
-//colors
+    //colors
 $accent: rgb(0, 184, 255);
 $default-text:  #ffffffa6;
 $navy: rgb(0, 0, 0);
@@ -22,9 +22,7 @@ $post-padding: 10px;
 html, body{
     background-color: $navy;
     color: #fff;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica";
-
-    
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -34,6 +32,7 @@ nav{
     height: 55px;
     position: sticky;
     top: 0;
+    z-index: 2;
     background-color: inherit;
     border-bottom: 1px rgba(white, 0.13) solid;
     .nav-container{
@@ -74,23 +73,17 @@ nav{
                     background-color: transparent;
                     border: none;
                     color: #fff;
-                    font-weight: 400;
                 }
                 input::placeholder{
-                    font-weight: 400;
                     font-size: 1rem;
                     line-height: 1.5;
-                    color: #fff;
+                    color: $default-text;
                 }
-                input:focus .search-bar{
-                    background-color: red;
+                input:focus::placeholder{
+                    color: #ffffff5d ;
                 }    
             }
         }
-        // .search-bar input:focus .search-bar{
-        //     background-color: black;
-        // }
-
         .nav-buttons{
             display: flex;
             align-items: center;
@@ -100,7 +93,14 @@ nav{
             justify-content: space-between;
             button{
              background-color: transparent;
-             border: none;   
+             border: none;
+             fill: $default-text;
+            }
+            button:hover{
+                cursor: pointer; 
+            }
+            button:focus{
+                fill: #fff;
             }
             .compose-btn{
                 background-color: $accent;
@@ -112,7 +112,6 @@ nav{
                 }
             }
         }
-        
     }
 }
 
@@ -175,7 +174,7 @@ nav{
             margin-left: auto;
             justify-content: space-evenly;
             button{
-                border: none;
+                border-bottom: 1px rgba(white, 0.13) solid;
                 background-color: inherit;
                 color: #fff;
                 font-size: 18px;
@@ -192,6 +191,8 @@ nav{
             }
             
         }
+        
+
         article{
             margin: 10px auto;
             height: auto;
@@ -209,108 +210,272 @@ nav{
                     position: sticky;
                 }
             }
-            .article-container{
+        }
+    }
+    .article-container{
+        border-radius: 3px;
+        background-color: $navy-accent;
+        width: 100%;
+        .article-header{
+            width: 100%;
+            height: 51px;
+            border-bottom: 1px rgba(white, 0.13) solid;
+            padding: 15px 20px auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .inner-left-header{
+                display: flex;
+                margin-left: 20px;
+                div{
+                    margin-right: 5px;
+                }
+                .reblog-name{
+                    a{
+                        text-decoration: none;
+                        color: $default-text;
+                        font-weight: 600;
+                    } 
+                }
+            }   
+            .inner-right-header{
+                margin-right: 20px;
+            }
+        }
+        .header-user-name{
+            text-align: center;
+            align-self: center;
+            a{
+                color: #fff;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+        .post-header-container{                    
+            .post-header{
+                padding: 15px 20px 0;
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: row;
+                div{
+                    margin-right: 5px;
+                }
+            }
+            .post-paragraph-container{
+                margin: 15px 0 0;
+                padding: 0 20px;
+                p{
+                    margin-bottom: 12px;
+                }
+            }
+            .post-picture-container{
                 width: 100%;
-                .article-header{
+                margin-bottom: 35px;
+                img{
                     width: 100%;
-                    height: 51px;
-                    padding: 15px 20px auto;
-                    box-sizing: border-box;
+                };
+            }
+        }
+        .post-header-image{
+            width: 25px;
+            height: 25px;
+            background-color: orange;
+            img{
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+        .post-footer-container{
+            padding-bottom: $post-padding;
+            padding-left: $post-padding;
+            padding-right: $post-padding;
+            box-sizing: border-box;
+            width: 100%;
+            .post-footer{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .footer-left-text{
+                    span{
+                        color: $default-text;
+                        font-weight: 600;
+                    }
+                }
+                .footer-right-icons{
+                    display: flex;
+                    align-items: center;
+                    width: 149px;
+                    height: 26.4px;
+                    .icon{
+                        margin-left: 20px;
+                    }
+                    .share-icon{
+                        width: 21px;
+                        height: 21px;                                         
+                    }
+                    .comment-icon{
+                        width: 21px;
+                        height: 21px;                               
+                    }
+                    .reblog-icon{
+                        height: 21px;                                                        
+                    }
+                    .like-icon{ 
+                        height: 21px;                                 
+                    }
+                }
+                .radar-footer-icons{
+                    width: 108px;
+                }
+            }
+        }
+    }
+
+    .right-column{        
+        
+
+        h1{
+            font-size: 1.3125rem;
+            font-weight: 600;
+            line-height: 1.2;
+            padding:0 10px 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.13);
+            // background-color: pink;
+        }
+        .right-container-1{
+            box-sizing: border-box;
+            margin: 0 0 38px;
+            ul{
+                list-style: none;
+                width: 320px;
+                height: 256px;
+                padding: 10px 0;
+                box-sizing: border-box;
+                li{
+                    height: 59px;
+                    width: 100%;
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    .inner-left-article-header{
+                    span{
+                        width: 226px;
+                        height: 100%;
                         display: flex;
-                        margin-left: 20px;
-                    }   
-                    .inner-right-article-header{
-                        margin-right: 20px;
+                        padding: 8px 10px;
+                        box-sizing: border-box;
                     }
-                }
-                .post-header-container{
-                    margin-top: 15px;
-                    .post-header{
-                        padding-left: $post-padding;
-                        padding-right: $post-padding;
-                        margin-bottom: 15px;
-                        display: flex;
-                        flex-direction: row;
-                        .post-header-image{
-                            width: 25px;
-                            height: 25px;
-                            background-color: orange;
-                            img{
-                                width: 100%;
-                            }
-                        }
-                    }
-                    .post-paragraph-container{
-                        padding: $post-padding;
-                    }
-                    .post-picture-container{
-                        width: 100%;
-                        margin-bottom: 35px;
+                    .suggested-account-img{
+                        width: 37px;
+                        height: 37px;
+                        align-self: center;
+                        margin: 0 11px 0 0px;
                         img{
-                            width: 100%
-                        };
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 3px;
+                        }
                     }
-                }
-                .post-footer-container{
-                    padding-bottom: $post-padding;
-                    padding-left: $post-padding;
-                    padding-right: $post-padding;
-                    box-sizing: border-box;
-                    width: 100%;
-                    .post-footer{
+                    .suggested-profile-id-container{
+                        font-size: 14px;
+                        div{
+                            height: 21px;
+                            line-height: 1.5;
+                        }
+                        .profile-id{
+                            font-weight: 700;
+                        }
+                        .profile-name{
+                            color: $default-text;
+                        }
+                    }
+                    .follow-button-right-container{
                         display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        .footer-left-text{
-                            span{
-                                color: $default-text;
-                            }
+                        width: 65px;
+                        button{
+                            align-self:center;
+                            background-color: transparent;
+                            margin: 0 auto;
+                            font-size: .875rem;
+                            border: none;
+                            color: $accent;
+                            font-weight: 600;
                         }
-                        .footer-right-icons{
-                            display: flex;
+                    }
+                    .remove-suggested-btn-container{
+                        display: flex;
+                        float: right;
+                        margin-right: 0;
+                        span{
+                            padding-left: 8px; //that is very questionable - work on it later
+                            width: 29px;
+                            text-align: right;
                             align-items: center;
-                            width: 149px;
-                            height: 26.4px;
-                            .icon{
-                                margin-left: 20px;
-                            }
-                            .share-icon{
-                                width: 21px;
-                                height: 21px;
-                                
-                                                               
-                            }
-                            .comment-icon{
-                                width: 21px;
-                                height: 21px;
-                                
-                                
-                            }
-                            .reblog-icon{
-                                height: 21px;
-                                 
-                                                               
-                            }
-                            .like-icon{ 
-                                height: 21px;
-                                 
-                            }
                         }
+                    }    
+                }
+            }
+            .eaot_right_container{
+                display: block;
+                text-decoration: none;
+                color: $accent;
+                height: 24px;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 12px 0 0;
+                padding: 0 0 0 10px;
+            }
+            .eaot_right_container:hover{
+                text-decoration: underline;
+            }
+        }
+        .right-container-2{
+            .right-inner-container{
+                padding: 0 10px;
+            }
+            .article-container{
+                margin: 10px 0;
+                
+                
+            }
+        }
+        .footer-container{
+            padding: 0 10px;
+            margin: 0 0 20px;
+            position: sticky;
+            top: calc(100vh - 18px - 20px);
+            ul{
+                list-style: none;
+                display: flex;
+                li{
+                    margin: 0 10px 0 0;
+                    a{
+                        text-decoration: none;
+                        color: $accent;
+                        font-size: 12.5px;
                     }
                 }
             }
         }
     }
-    .right-column{
-        background-color: burlywood;
-    }
 }
 
+//universal classes
+.space-between{
+    justify-content: space-between;
+}
+
+.follow-button{
+    display: flex;
+    button{
+        align-self:center;
+        background-color: transparent;
+        font-size: .875rem;
+        border: none;
+        color: $accent;
+        font-weight: 600;
+    }
+}
 
 
 
