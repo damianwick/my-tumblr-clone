@@ -17,7 +17,7 @@
 <body>
     <nav class="desktop-top-nav">
         <div class="nav-container">
-            <div class="hamburger-menu">
+            <div class="hamburger-menu" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -97,7 +97,7 @@
         </div>
     </nav>
 
-    <nav class="mobile-side-nav hidden-desktop">
+    <nav class="mobile-side-nav hidden-desktop hide" id="nav-left">
         <ul>
             <li>
                 <button type="button" class="compose-btn">
@@ -295,8 +295,8 @@
         <h4>Blogs</h4>
         <ul class="account-menu-list">
             <li class="expand-account-menu-container">
-                <div class="account-settings-header-container">
-                    <button class="expand-account-menu-button">
+                <button class="account-settings-header-container" id="user-menu">
+                    <div class="expand-account-menu-button">
                             <div class="suggested-account-img">
                                 <img src="../assets/flowers.jpg" alt="">
                             </div>
@@ -308,21 +308,16 @@
                                     user name
                                 </div>
                             </div>
-                    </button>
-                    <div class="expand-icon-container">
-                        <span>
-                            <input type="checkbox" id="rotate-input">
+                        </div>
+                    <div class="expand-icon-container" id="expand-icon">
                             <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="9" width="15" viewBox="0 0 15 9" role="presentation" style="--icon-color-primary:rgba(var(--white-on-dark), 0.65); transform: rotate(180deg); transform-origin: center center;"><defs><svg id="managed-icon__caret-thin" fill="var(--icon-color-primary, #ffffff)" viewBox="0 0 15 9">
                                 <path d="M2.498 1.045a1.026 1.026 0 0 0-1.446.005 1.027 1.027 0 0 0 0 1.454l5.839 5.45a1.023 1.023 0 0 0 .83.29c-.017.004.02.006.057.006.27 0 .53-.106.726-.3l5.828-5.44a1.029 1.029 0 1 0-1.448-1.46l-5.19 4.845-5.196-4.85z" fill="#FFFFFF"></path>
                               </svg></defs><g>
                                 <path d="M2.498 1.045a1.026 1.026 0 0 0-1.446.005 1.027 1.027 0 0 0 0 1.454l5.839 5.45a1.023 1.023 0 0 0 .83.29c-.017.004.02.006.057.006.27 0 .53-.106.726-.3l5.828-5.44a1.029 1.029 0 1 0-1.448-1.46l-5.19 4.845-5.196-4.85z" fill="#FFFFFFa6"></path>
                               </g></svg>
-                        </span>
-                        
-                            <!-- </button> -->
                     </div>
-                </div>
-                <ul>
+                </button>
+                <ul id="account-settings">
                     <li>
                         <a href="">Posts</a>
                     </li>
@@ -350,6 +345,22 @@
                 </ul>
             </li>
         </ul>
+        <div class="footer-container">
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Apps</a>
+                </li>
+                <li>
+                    <a href="">Legal</a>
+                </li>
+                <li>
+                    <a href="">Privacy</a>
+                </li>
+            </ul>
+    </div>
     </nav>
 
     <section class="home-container">
@@ -907,6 +918,6 @@
             </div>
         </div>
     </section>
-    
+    <script src="index.js"></script>
 </body>
 </html>

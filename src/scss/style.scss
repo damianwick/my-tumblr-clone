@@ -101,6 +101,9 @@ html, body{
              border: none;
              fill: $default-text;
             }
+            button:nth-child(1){
+                fill: #fff;
+            }
             button:hover{
                 cursor: pointer; 
             }
@@ -187,12 +190,13 @@ html, body{
             float: right;
             margin-left: auto;
             justify-content: space-evenly;
+            border-bottom: 1px rgba(white, 0.13) solid;
             .more-btn{
                 display: none;
             }
             button{
                 border: none;
-                border-bottom: 1px rgba(white, 0.13) solid;
+                
                 background-color: inherit;
                 color: #fff;
                 font-size: 18px;
@@ -561,6 +565,13 @@ html, body{
 .hidden-desktop{
     display: none;
 };
+.hide{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    // transform: rotate(90deg);
+    // transition-duration:1s;
+}
 
 
 @media screen and (max-width: 989px) {
@@ -577,6 +588,7 @@ html, body{
             max-width: 989px;
             padding: 0 5px;
             position: relative;
+            // background-color: teal;
             .hamburger-menu{
                 width: 40px;
                 height: 40px;
@@ -604,11 +616,11 @@ html, body{
                 display: none;
             }
             .nav-left-side{
-                margin: 0 auto;
-                width: 34px;
-                height: 44px;               
+                width: calc(50vw - 14px);
+                height: 44px;
+                display: flex;
+                justify-content: space-between;
                 .logo-nav{
-                    margin: 0 auto;
                     padding: 0;
                     width: 14px;
                     height: 25px;
@@ -618,7 +630,16 @@ html, body{
                     }
                 } 
                 .search-bar{
-                    display: none;
+                    background-color: transparent;
+                    .search-icon{
+                        svg{
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                    input{
+                        display: none;
+                    }
                 }
             }
         }
@@ -704,6 +725,9 @@ html, body{
                     height: 63.98px;
                     width: 712.8px;
                     display: flex;
+                    background-color: inherit;
+                    border: none;
+                    cursor: pointer;
                     align-items: center;
                     justify-content: space-between;
                     .expand-account-menu-button{
@@ -748,30 +772,9 @@ html, body{
                         }
                     }
                     .expand-icon-container{
-                        span{
-                            height: 100%;
-                            input{
-                                position: absolute;
-                                opacity: 0;
-                                background-color: transparent;
-                                border: none;
-                                cursor: pointer;
-                                width: 15px;
-                                height: 20px;
-                                z-index: 1;
-                            }
-                            svg{
-                                transition-duration: 1s;
-                                // transition-property: transform;
-                            }
-                            input:hover + svg{
-                                    background-color: green;
-                                    transform: rotate(180deg);
-                            }
-                        }
-                        
+                        transition-duration: 0.3s;
+                        transition-property: transform;
                     }
-                    
                 }
                 ul{
                     width: 712.8px;
@@ -779,13 +782,15 @@ html, body{
                     margin-left: 40px;
                     margin-right: 35px;
                     list-style: none;
-                    transition-property: max-height, opacity;
                     max-height: 1000px;
-                    transition-duration: 200ms, 200ms;
-                    transition-timing-function: ease, ease;
-                    transition-delay: 0s, 0s;
-                    opacity: 1;
-                    visibility: visible;
+                    visibility: hidden;
+                    opacity: 0;
+                    // transition-property: transform;
+                    // transition-duration: 1s;
+                    transform: translateY(-3em);
+                    // transition-timing-function: ease;
+                    // transition: transform 1s linear 0s;
+                    transition: all 0.5s ease-in-out 1s, transform 1s linear;
                     li{
                         a{
                             text-decoration: none;
@@ -799,6 +804,33 @@ html, body{
                 }
             }
         }
+        
+    .footer-container{
+        height: 38px;
+        width: 100%;
+        margin: 20px 10px 0;
+        ul{
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            li{
+                padding: 0 14px;
+                a{
+                    font-size: 12.5px;
+                    color: #fff;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+    #user-menu{
+        transition-property: transform;
+        transition-duration: 1s;
     }
    .home-container{
         grid-template-columns: 1fr;
@@ -809,7 +841,6 @@ html, body{
                 display: none;
             }
             .content-selection{
-                border-bottom: 1px solid rgba(255, 255, 255, 0.13);
                 margin: 0px 0 10px;
                 button{
                     cursor: pointer;
