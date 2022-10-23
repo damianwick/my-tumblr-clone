@@ -91,7 +91,7 @@ html, body {
 .desktop-top-nav .nav-container .nav-buttons button:hover {
   cursor: pointer;
 }
-.desktop-top-nav .nav-container .nav-buttons button:focus {
+.desktop-top-nav .nav-container .nav-buttons button:active {
   fill: #fff;
 }
 .desktop-top-nav .nav-container .nav-buttons .compose-btn {
@@ -524,8 +524,8 @@ html, body {
 
 .hide {
   display: none;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
 }
 
 @media screen and (max-width: 989px) {
@@ -536,6 +536,7 @@ html, body {
     display: block;
   }
   .desktop-top-nav {
+    max-width: 100vw;
     height: 44px;
     border: none;
   }
@@ -560,6 +561,7 @@ html, body {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.6509803922);
     border-radius: 3px;
+    transition: transform 0.15s linear 0s;
   }
   .desktop-top-nav .nav-container .hamburger-menu span:nth-child(1) {
     transform: translateY(-6px);
@@ -595,12 +597,29 @@ html, body {
   .desktop-top-nav .nav-container .nav-left-side .search-bar input {
     display: none;
   }
+  .glass-container {
+    transition: background-color 0.15s linear 0s, width 0.1s ease-in 0s, opacity 0.1s linear 0s;
+    position: fixed;
+    z-index: 2;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+  .glass-container::-webkit-scrollbar {
+    display: none;
+  }
+  .mobile-side-nav::-webkit-scrollbar {
+    display: none;
+  }
   .mobile-side-nav {
     display: block;
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    z-index: 2;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
     background-color: rgb(0, 0, 0);
   }
   .mobile-side-nav ul:nth-child(1) {
@@ -638,7 +657,7 @@ html, body {
     height: 49.99px;
   }
   .mobile-side-nav ul:nth-child(1) li a {
-    max-width: 851.75px;
+    max-width: 100%;
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -668,6 +687,7 @@ html, body {
   .mobile-side-nav .account-menu-list {
     display: block;
     list-style: none;
+    width: auto;
     margin-block-end: 1em;
     padding-inline-start: 18px;
   }
@@ -677,7 +697,8 @@ html, body {
   }
   .mobile-side-nav .account-menu-list li .account-settings-header-container {
     height: 63.98px;
-    width: 712.8px;
+    width: 100%;
+    padding-right: 12px;
     display: flex;
     background-color: inherit;
     border: none;
@@ -728,18 +749,23 @@ html, body {
   .mobile-side-nav .account-menu-list li .account-settings-header-container .expand-icon-container {
     transition-duration: 0.3s;
     transition-property: transform;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-side-nav .account-menu-list li .account-settings-header-container:hover {
+    background-color: rgba(57, 57, 57, 0.3);
   }
   .mobile-side-nav .account-menu-list li ul {
-    width: 712.8px;
+    width: 81%;
     height: auto;
     margin-left: 40px;
     margin-right: 35px;
     list-style: none;
-    max-height: 1000px;
+    max-height: 0;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-3em);
-    transition: all 0.5s ease-in-out 1s, transform 1s linear;
+    transition: opacity 0.2s ease 0.1s, transform 0.2s ease-out, max-height 0.02s ease 0s;
   }
   .mobile-side-nav .account-menu-list li ul li a {
     text-decoration: none;
@@ -749,9 +775,12 @@ html, body {
     font-weight: 400;
     line-height: 1.333;
   }
+  .mobile-side-nav .account-menu-list li ul li a:hover {
+    background-color: rgba(57, 57, 57, 0.3);
+  }
   .mobile-side-nav .footer-container {
     height: 38px;
-    width: 100%;
+    width: auto;
     margin: 20px 10px 0;
   }
   .mobile-side-nav .footer-container ul {
@@ -800,6 +829,34 @@ html, body {
     margin-left: 8px;
     background-color: #fff;
     border-radius: 50%;
+  }
+  .home-container .left-column .content-selection .more-btn .more-container {
+    position: absolute;
+    transform: translate3d(544px, 10.6, 0px);
+    vertical-align: baseline;
+    flex-direction: column;
+    width: 200px;
+    height: 108px;
+    border-radius: 3px;
+    overflow: auto;
+  }
+  .home-container .left-column .content-selection .more-btn .more-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 33.3333333%;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .home-container .left-column .content-selection .more-btn .more-container a:hover {
+    background-color: rgb(57, 57, 57);
   }
   .home-container .left-column article {
     font-size: 14px;

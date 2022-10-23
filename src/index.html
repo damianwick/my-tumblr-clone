@@ -97,7 +97,8 @@
         </div>
     </nav>
 
-    <nav class="mobile-side-nav hidden-desktop hide" id="nav-left">
+<div class="glass-container hidden-desktop" id="nav-left">
+    <nav class="mobile-side-nav">
         <ul>
             <li>
                 <button type="button" class="compose-btn">
@@ -362,9 +363,11 @@
             </ul>
     </div>
     </nav>
+</div>
+   
 
-    <section class="home-container">
-        <div class="left-column">
+    <section class="home-container" id="home-container">
+        <div class="left-column" id="left-column">
             <div class="post-selection-section">
                 <div class="profile-img">
                     <img src="../assets/account images/damian_square.jpg" alt="">
@@ -447,6 +450,12 @@
                       </svg></defs><g>
                         <path d="M0 2.9l7.2 7.2-7.1 7.1L3 20.1l7.1-7.1 2.9-2.9L2.9 0 0 2.9"></path>
                       </g></svg></button>
+                      <div class="more-container">
+                        <a href="">For you 🔮</a>
+                        <a href="">Your tags 🔖</a>
+                        <a href="">Manage...</a>
+
+                      </div>
                 </div>
             </div>
 
@@ -918,6 +927,7 @@
             </div>
         </div>
     </section>
+
     <script src="index.js"></script>
 </body>
 </html>
