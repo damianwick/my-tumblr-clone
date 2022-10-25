@@ -79,16 +79,23 @@ html, body{
                     border: none;
                     color: #fff;
                 }
+                input:focus{
+                    outline: none;
+                }
                 input::placeholder{
                     font-size: 1rem;
                     line-height: 1.5;
                     color: $default-text;
                 }
                 input:focus::placeholder{
-                    color: #ffffff5d ;
+                    color: #ffffff5d;
                 }    
             }
+            .search-bar:focus-within{
+                background-color: rgba(#fff, 0.15);
+            }
         }
+
         .nav-buttons{
             display: flex;
             align-items: center;
@@ -130,7 +137,6 @@ html, body{
     max-width: 990px;
     margin: 40px auto;
     height: auto;
-    
     .left-column{
         display: flex;
         flex-direction: column;
@@ -141,6 +147,7 @@ html, body{
             .profile-img{
                 width: 64px;
                 height: 64px;
+                cursor: pointer;
                 img{
                     border-radius: 3px;
                     width: 100%;
@@ -160,7 +167,7 @@ html, body{
                 button{
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
                     width: 75.71px;
                     height: 74px;
@@ -168,10 +175,11 @@ html, body{
                     color: #fff;
                     background-color: transparent;
                     border: none;
-                    text-align: center;
+                    text-align: bottom;
+                    font-size: 1em;
+                    cursor: pointer;
                     svg{
-                        margin: 0 0 5px;
-                        
+                        margin: 0 0 5px;   
                     }
                     svg:hover{
                         cursor: pointer;
@@ -184,6 +192,7 @@ html, body{
                 }
             }
         }
+
         .content-selection{
             display: flex;
             position: sticky;
@@ -212,12 +221,10 @@ html, body{
                 color: $blue;
                 border-bottom: 2px solid $blue;
             }
-            
             .more-btn button:active{
                 color: #fff;
                 border-bottom: none;
             }
-            
         }
         
         #following-btn{
@@ -246,13 +253,12 @@ html, body{
                         width: 100%;
                         height: auto;
                         cursor: pointer;
-                                          
                     }
                 }
-                
             }
         }
     }
+    
     .article-container{
         border-radius: 3px;
         background-color: $navy-accent;
@@ -289,6 +295,9 @@ html, body{
             }   
             .inner-right-header{
                 margin-right: 20px;
+                svg{
+                    cursor: pointer;
+                }
             }
         }
         .header-user-name{
@@ -300,7 +309,6 @@ html, body{
                 font-weight: 600;
             }
         }
-        
         .post-header-container{                    
             .post-header{
                 padding: 15px 20px 0;
@@ -320,7 +328,6 @@ html, body{
                     svg{
                         z-index: 0;
                         cursor: pointer;
-
                     }
                 }
             }
@@ -493,7 +500,6 @@ html, body{
                                 fill: #fff;
                             }
                         }
-
                     }    
                 }
                 li:hover{
@@ -521,10 +527,13 @@ html, body{
             .article-container{
                 margin: 10px 0;
                 .article-header{
-                    height: 45px;
+                    height: 50px;
                     padding: inherit 10px;
                     .inner-left-header{
                         margin: 0 0 0 10px;
+                    }
+                    .inner-right-header{
+                        margin-right: 10px;
                     }
                 }
             }
@@ -553,11 +562,9 @@ html, body{
     }
 }
 
-//universal classes
 .space-between{
     justify-content: space-between;
 }
-
 .follow-button{
     display: flex;
     button{
@@ -572,26 +579,24 @@ html, body{
         text-decoration: underline;
     }
 }
-
 .hidden-desktop{
     display: none;
-};
+}
 .hide{
     display: none;
     visibility: hidden;
     opacity: 0;
 }
 
-
 @media screen and (max-width: 989px) {
     .hidden-mobile{
-        display: none; //why doesn't adding class work?
+        display: none;
     }
     .hidden-desktop{
         display: block;
     }
     .desktop-top-nav{
-        width: 100vw;
+        width: calc(100vw - 14px);
         height: 44px;
         border: none;
         position: fixed;
@@ -617,7 +622,6 @@ html, body{
                     transition: transform 0.15s linear 0s;
                 }
                 span:nth-child(1) {
-                    // margin-top: -6px;
                     transform: translateY(-6px)
                 }
                 span:nth-child(2) {
@@ -681,7 +685,6 @@ html, body{
         overflow: scroll;
         scrollbar-width: none;
         background-color: $navy;
-
         ul:nth-child(1){
             list-style:none;
             max-width: 855px;
@@ -793,7 +796,6 @@ html, body{
                                 margin: 0;
                                 display: flex;
                                 line-height: 1.333;
-                                // font-size: 1rem;
                                 font-size: 18px;
                                 height: 23.99px;
                             }
@@ -835,40 +837,37 @@ html, body{
                             font-size: 1.125rem;
                             font-weight: 400;
                             line-height: 1.333;
-                            
                         }
                         a:hover{
                             background-color: $dark-accent;
                         }
-                    
                     }
                 }
             }
         }
         
-    .footer-container{
-        height: 38px;
-        width: auto;
-        margin: 20px 10px 0;
-        ul{
-            height: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: baseline;
-            li{
-                padding: 0 14px;
-                a{
-                    font-size: 12.5px;
-                    color: #fff;
-                }
-                a:hover{
-                    text-decoration: underline;
+        .footer-container{
+            height: 38px;
+            width: auto;
+            margin: 20px 10px 0;
+            ul{
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+                li{
+                    padding: 0 14px;
+                    a{
+                        font-size: 12.5px;
+                        color: #fff;
+                    }
+                    a:hover{
+                        text-decoration: underline;
+                    }
                 }
             }
         }
     }
-}
-
     #user-menu{
         transition-property: transform;
         transition-duration: 1s;
@@ -885,7 +884,7 @@ html, body{
             .content-selection{
                 top: 44px;
                 background-color: $navy;
-                margin: 0px 0 10px;
+                margin: 0px 0 75px;
                 z-index: 2;
                 button{
                     cursor: pointer;
@@ -897,8 +896,6 @@ html, body{
                 }
                 .more-btn{
                     display: block;
-                    
-
                     button{
                         svg{
                             margin-left: 8px;
@@ -919,8 +916,6 @@ html, body{
                         height: 108px;
                         border-radius: 3px;
                         overflow: auto;
-                        
-                        
                         a{  
                             display: flex;
                             align-items: center;
@@ -935,7 +930,6 @@ html, body{
                             font-size: 16px;
                             text-decoration: none;
                             color: #fff;
-                            
                         }
                         a:hover{
                             background-color: rgb(57, 57, 57);
@@ -946,7 +940,6 @@ html, body{
             article{
                 font-size: $font-mobile-md;
                 grid-template-columns: 1fr;
-                margin-top: 80px;
                 .sticky-avatar-container{
                     display: none;
                 }
@@ -976,7 +969,7 @@ html, body{
                                     flex-direction: row;
                                 }
                             }
-                            .avatar-img-mobile{ //how to use it without doubling it?
+                            .avatar-img-mobile{
                                 display: block;
                                 width: 38px;
                                 height: 38px;
