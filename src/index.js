@@ -6,6 +6,7 @@ const expandIcon = document.getElementById('expand-icon');
 const homeContainer = document.getElementById('home-container'); 
 const topNav = document.querySelector(".desktop-top-nav"); 
 
+
 let switchControl = 0;
 button.addEventListener('click', function(){
     expandIcon.style.transform = "rotate(180deg)";
@@ -36,6 +37,7 @@ hamburger.addEventListener('click', function(){
         }
 });
 
+/*****************close side nav with a click outside the nav & esc*****************/
 document.addEventListener('keydown', function(e){
     if(e.key == "Escape") {
         closeSideNav();
@@ -53,14 +55,19 @@ document.addEventListener('click',function(e) {
     };
 });
 
+/********************************************************************/
+
+
+
+const topNavHeight = topNav.clientHeight + "px";
+
+console.log(topNavHeight);
 const openSideNav = () => {
     navMobile.style.width = "100vw";
-    navMobile.style.height = "100vh";
+    navMobile.style.height = "calc(100vh - 44px)";
     navMobile.style["background-color"] = "rgba(0, 0, 0, 0.8)"
     navMobile.style.opacity = 1;
-    homeContainer.style.overflow = "hidden";
-    homeContainer.style["max-height"] = "calc(100vh - 55px)";
-    
+
     hamburgerTransitionOn();
 
     switchControl2 = 1;
@@ -69,7 +76,8 @@ const closeSideNav = () => {
     navMobile.style.width = 0;
     navMobile.style.height = 0;
     navMobile.style.opacity = 0;
-    homeContainer.style["max-height"] = "100%";
+    // homeContainer.style["max-height"] = "100%";
+    homeContainer.style.overflow = "block";
 
     hamburgerTransitionOff();
 
@@ -99,5 +107,49 @@ const hamburgerTransitionOff = () => {
         layer.style["background-color"] = "#ffffffa6";
     }
 };
+
 /*----------------------------------------------------*/ 
+
+// ---------------MORE BUTTON FUNCTIONALITY---------------
+
+const moreBtn = document.querySelector(".more-btn");
+const moreContainer = document.querySelector(".more-container");
+
+let moreBtnControl = 0;
+
+moreBtn.addEventListener('click', function() {
+    if(moreBtnControl === 0) {
+        openMoreBtn();
+        moreBtnControl = 1;
+    } else{
+        closeMoreBtn();
+        moreBtnControl = 0;
+    };
+});
+
+const closeWhenClickedOutside = () => {
+    document.addEventListener('click', function(e) {
+        if(e.target.parentElement.id != moreContainer.id 
+            && moreBtnControl == 1
+            && !e.target.parentElement.classList.contains('more-btn')) {
+            closeMoreBtn();
+            moreBtnControl = 0;
+        };
+    });
+};
+
+closeWhenClickedOutside();
+
+const openMoreBtn = () => {
+    moreContainer.style.visibility = "visible";
+    moreContainer.style.opacity = 1;
+};
+
+const closeMoreBtn = () => {
+    moreContainer.style.visibility = "hidden";
+    moreContainer.style.opacity = 0;
+};
+
+// ---------------------------------------------------------
+
 
