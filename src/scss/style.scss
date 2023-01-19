@@ -489,7 +489,7 @@ html, body{
                         margin-right: 0;
                         cursor: default;
                         span{
-                            padding-left: 8px; //that is very questionable - work on it later
+                            padding-left: 8px;
                             width: 29px;
                             text-align: right;
                             align-items: center;
@@ -596,7 +596,7 @@ html, body{
         display: block;
     }
     .desktop-top-nav{
-        width: calc(100vw - 14px);
+        width: 100vw;
         height: 44px;
         border: none;
         position: fixed;
@@ -910,6 +910,9 @@ html, body{
                         opacity: 0;
                         transition: opacity 0.15s ease-in 0s;     
                         top: 65px;
+                        @media only screen and (max-width:540px) {
+                            right: 20px;
+                        }
                         vertical-align: baseline;
                         flex-direction: column;
                         width: 200px;

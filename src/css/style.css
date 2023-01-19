@@ -561,7 +561,7 @@ html, body {
     display: block;
   }
   .desktop-top-nav {
-    width: calc(100vw - 14px);
+    width: 100vw;
     height: 44px;
     border: none;
     position: fixed;
@@ -850,8 +850,8 @@ html, body {
     cursor: pointer;
   }
   .home-container .left-column .content-selection button:nth-child(2),
-.home-container .left-column .content-selection button:nth-child(3),
-.home-container .left-column .content-selection button:nth-child(4) {
+  .home-container .left-column .content-selection button:nth-child(3),
+  .home-container .left-column .content-selection button:nth-child(4) {
     display: none;
   }
   .home-container .left-column .content-selection .more-btn {
@@ -876,6 +876,13 @@ html, body {
     border-radius: 3px;
     overflow: auto;
   }
+}
+@media only screen and (max-width: 989px) and (max-width: 540px) {
+  .home-container .left-column .content-selection .more-btn .more-container {
+    right: 20px;
+  }
+}
+@media screen and (max-width: 989px) {
   .home-container .left-column .content-selection .more-btn .more-container a {
     display: flex;
     align-items: center;
@@ -891,9 +898,13 @@ html, body {
     text-decoration: none;
     color: #fff;
   }
+}
+@media screen and (max-width: 989px) {
   .home-container .left-column .content-selection .more-btn .more-container a:hover {
     background-color: rgb(57, 57, 57);
   }
+}
+@media screen and (max-width: 989px) {
   .home-container .left-column article {
     font-size: 14px;
     grid-template-columns: 1fr;

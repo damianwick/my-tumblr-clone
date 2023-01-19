@@ -6,7 +6,6 @@ const expandIcon = document.getElementById('expand-icon');
 const homeContainer = document.getElementById('home-container'); 
 const topNav = document.querySelector(".desktop-top-nav"); 
 
-
 let switchControl = 0;
 button.addEventListener('click', function(){
     expandIcon.style.transform = "rotate(180deg)";
@@ -66,16 +65,20 @@ const openSideNav = () => {
     hamburgerTransitionOn();
 
     switchControl2 = 1;
+
+    homeContainer.style.overflow = 'hidden'
 };
 const closeSideNav = () => {
     navMobile.style.width = 0;
     navMobile.style.height = 0;
     navMobile.style.opacity = 0;
     homeContainer.style.overflow = "block";
-
+    
     hamburgerTransitionOff();
 
     switchControl2 = 0;
+
+    homeContainer.style.overflow = 'visible'
 };
 
 //*******************humburger menu animation*******************//
@@ -124,7 +127,7 @@ moreBtn.addEventListener('click', function() {
 
 const closeWhenClickedOutside = () => {
     document.addEventListener('click', function(e) {
-        if(e.target.parentElement.id != moreContainer.id 
+        if(e.target.parentElement.id !== moreContainer.id 
             && moreBtnControl == 1
             && !e.target.parentElement.classList.contains('more-btn')) {
             closeMoreBtn();
